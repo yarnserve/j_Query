@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-탐색 선택자</title>
+    <script src="./js/jquery-1.12.3.js"></script>    
+</head>
+<body>
+    <section>
+        <h1>탐색 선택자</h1>
+        <ul id="menu_1">
+            <li>메뉴 1_1</li>
+            <li>메뉴 1_2</li>
+            <li>메뉴 1_3</li>
+            <li>메뉴 1_4</li>
+            <li>메뉴 1_5</li>
+        </ul>
+
+        <ul id="menu_2">
+            <li>메뉴 2_1</li>
+            <li>메뉴 2_2</li>
+            <li>메뉴 2_3</li>
+            <li>메뉴 2_4</li>
+            <li>메뉴 2_5</li>
+        </ul>
+    </section>  
+
+    <script>
+        // $('li:first').css('border', '5px solid red') // 첫 번째 요소
+        // $('li').first().css('border', '5px solid blue') // 첫 번째 요소
+        // $('li:last').css('border', '5px solid red') // 마지막 요소
+        // $('li').last().css('border', '5px solid blue') // 마지막 요소
+        // $('li:odd').css('border', '5px solid green') // 홀수 인덱스 
+        // $('li:even').css('border', '5px solid red') // 짝수 인덱스 
+
+        // $('li:first-of-type').css('border', '5px solid red') // 요소의 무리 중 첫번째 요소
+        // $('li:last-of-type').css('border', '5px solid blue') // 요소의 무리 중 마지막 요소
+
+        // $('li:nth-child(2)').css('border', '5px solid red') // 요소 무리 중 n번째 요소
+        // $('li:nth-child(3n)').css('border', '5px solid blue') // 요소 무리 중 3배수 번째 요소
+
+        // $('li').eq(1).css('border', '5px solid red') // 인덱스 1인 요소
+        // $('li:gt(5)').css('border', '5px solid red') // 인덱스 5보다 큰 요소
+        // $('li:lt(4)').css('border', '5px solid blue') // 인덱스 4보다 작은 요소
+
+        // $('li').slice(7).css('border', '5px solid blue') // 인덱스 7부터 선택
+    </script>    
+</body>
+</html>
