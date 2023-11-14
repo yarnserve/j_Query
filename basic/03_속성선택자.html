@@ -75,6 +75,17 @@
         $('li:contains("구글")').css('background', 'orange') // '구글'텍스트를 포함한 요소 
         $('#f2').contents().css('background', 'red') // 선택요소의 모든 자식요소  
         $('li a').has('span').css('border', '2px solid green') // a중 'span'을 가진 요소
+        $('li').not(':first').css('border', '4px solid blue') // 첫번째 요소만 제외한 나머지 요소
+
+        $('form p').filter('#f5').css('background', 'red') // p중에 id가 f5인 요소
+        $('form').find('#f4').css('background', 'orange') // form에서 id가 f4인 요소
+
+        // is() 메서드
+        console.log($('#list li').eq(3).is(':visible'))
+        console.log($('#list li').eq(3).is(':hidden'))
+        console.log($('#sel').is(':selected'))
+        console.log($('#chk').is(':checked'))
+        console.log($('#chk2').is(':checked'))
     </script>    
 </body>
 </html>
