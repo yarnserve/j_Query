@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-이벤트 등록 및 제거</title>
+    <script src="./js/jquery-1.12.3.js"></script>
+</head>
+<body>
+    <h1>객체 편집 메서드</h1>
+    <section>
+        <button class="btn1">버튼 1</button>
+        <p>내용 1</p>
+        <button class="btn2">버튼 2</button>
+        <p>내용 2</p>
+    </section>
+
+    <script>
+        // 단독 이벤트 등록
+        $('.btn1').click(function() {
+            $(this).next().text('hello')
+        })
+
+        // $('.btn2').on('mouseover', function() {
+        //     $(this).next().text('안녕하세요')
+        // })
+
+        $('.btn2').on(
+            {
+                'mouseover focus': function() {
+                $(this).next().text('어서 오세요')
+                },
+                
+                'mouseleave blur': function() {
+                $(this).next().text('안녕히 가세요')
+                }   
+            }           
+        )
+
+    </script>
+</body>
+</html>
