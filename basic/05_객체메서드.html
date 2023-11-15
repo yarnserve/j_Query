@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-객체 관련 메서드</title>
+    <script src="./js/jquery-1.12.3.js"></script>
+</head>
+<body>
+    <h1>객체 관련 메서드</h1>
+
+    <div id="box1">
+        <h2>Html</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, fuga?</p>
+    </div>
+
+    <div id="box2"></div>
+
+    <div id="box3">
+        <h2></h2>
+        <p></p>
+    </div>
+
+    <div id="box4">
+        <img src="./images/card_01.jpg" alt="card1" border="2">
+    </div>
+
+    <form action="">
+        <label for="user_name">이름</label>
+        <input type="text" name="user_name" id="user_name" value="홍길동">
+        <label for="user_id">아이디</label>
+        <input type="text" name="user_id" id="user_id" value="Alice">
+    </form> 
+    
+    <script>
+        // html(), text()
+        var result = $('#box1').html() // 하위요소를 문자열로 변경
+        $('#box2').text(result) // 요소에 추가
+        $('#box1 p').html('<a href="#">안녕하세요</a>') // 하위요소를 제거하고 새 요소로 변경
+        $('#box3 h2').text($('#box1 h2').text()) // 요소의 텍스트를 가져오거나 생성
+        $('#box3 p').text($('#box1 p').text()) // 요소의 텍스트를 가져오거나 생성
+
+        // attr(), removeAttr()
+        var srcValue = $('#box4 img').attr('src')
+        var altValue = $('#box4 img').attr('alt')
+        var borderValue = $('#box4 img').attr('border')
+        console.log(srcValue);
+        console.log(altValue);
+        console.log(borderValue);
+
+        $('#box4 img').attr({
+            src: './images/card_03.jpg',
+            width: 200,
+            alt: 'card3'
+        }).removeAttr('border')
+
+        // var() - 폼 요소의 속성값을 가져오거나 적용
+        console.log($('#user_name').val());
+        console.log($('#user_id').val());
+
+        $('#user_name').val('임꺽정')
+        $('#user_id').val('Tom')
+    </script>
+  
+</body>
+</html>
