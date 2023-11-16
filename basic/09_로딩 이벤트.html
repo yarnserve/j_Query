@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-로딩 이벤트</title>
+    <script src="./js/jquery-1.12.3.js"></script>
+</head>
+<body>
+    <h1>로딩 이벤트</h1>
+    <section>
+        <img src="https://picsum.photos/300" alt="">
+    </section>
+
+    <p class="value1"></p>
+    <p class="value2"></p>
+
+    <script>
+        // ready()
+        $(document).ready(function() {
+            $('.value1').text($('img').height())
+        })
+
+        // $(function() {
+        //     //
+        // })
+
+        // load() 
+        $(window).load(function() {
+            $('.value2').text($('img').height())
+        })
+    </script>
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-마우스 이벤트</title>
+    <script src="./js/jquery-1.12.3.js"></script>
+    <style>
+        .wrap {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        section {
+            padding: 30px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>마우스 이벤트</h1>
+    <div class="wrap">
+        <section>
+            <button class="btn1">버튼 1</button>
+            <p>내용 1</p>
+            <button class="btn2">버튼 2</button>
+            <p>내용 2</p>
+        </section>
+        <script>
+            $('.btn1').click(function() {
+                $(this).next().css('background', 'red')
+            })
+            
+            // $('.btn2').on('mouseover focus', function() {
+            //     $(this).next().css('color', 'green')
+            // })
+
+            // $('.btn2').on('mouseout blur', function() {
+            //     $(this).next().css('color', 'black')
+            // })
+            $('.btn2').on({
+                'mouseover focus': function() {
+                    $(this).next().css('color', 'green')
+                },
+                'mouseout blur': function() {
+                    $(this).next().css('color', 'black')
+                }
+            })
+        </script>
+
+
+        <section>
+            <ul id="box_1">
+                <li><a href="#">내용1</a></li>
+                <li><a href="#">내용2</a></li>
+                <li><a href="#">내용3</a></li>
+            </ul>
+            <ul id="box_2">
+                <li><a href="#">내용1</a></li>
+                <li><a href="#">내용2</a></li>
+                <li><a href="#">내용3</a></li>
+            </ul>
+        </section>
+
+        <script>
+            // mouseover, mouseleave / mouseenter, mouseout
+            $('#box_1').on('mouseover', function() {
+                $('#box_1 li').css('background', 'yellow')
+            })
+            $('#box_1').on('mouseleave', function() {
+                $('#box_1 li').css('background', 'red')
+            })
+        </script>
+
+        <section>
+            <h3>mouse move</h3>
+            <p>x: <span class="posX"></span></p>
+            <p>y: <span class="posY"></span></p>
+        </section>
+        <script>
+            $(document).on('mousemove', function(e) {
+                $('.posX').text(e.pageX)
+                $('.posY').text(e.pageY)
+            })
+        </script>        
+
+        <section>
+            <select name="" id="site">
+                <option value="https://google.com">구글</option>
+                <option value="https://daum.net" selected>다음</option>
+                <option value="https://naver.com">네이버</option>
+            </select>
+            <p class="site">hello!</p>
+            <p><a href="#" class="btn">이벤트 객체</a></p>
+        </section>
+        
+        <script>
+            //scroll evnet
+            $(window).scroll(function() {
+                console.log($(this).scrollTop())
+            })
+
+            // change
+            $('#site').on('change', function() {
+                $('.site').text($(this).val())
+            })
+
+            // 이벤트 객체
+            $('.btn').click(function(e) {
+                e.preventDefault()
+                console.log(e.target.text)
+            })
+        </script>
+    </div>
+</body>
+</html>
