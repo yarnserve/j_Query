@@ -9,3 +9,14 @@ $('.btn1').on('click', function() {
             })
 })
 ```
+
+- fade()
+
+```
+        $('.btn1').on('click', function(){
+            $('.box').slideUp(1000, 'linear', function() {
+                $('.btn1').hide()
+                $('.btn2').show()
+            })
+        })
+```
