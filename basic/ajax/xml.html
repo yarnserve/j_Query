@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax - xml</title>
+    <script src="../js/jquery-1.12.3.js"></script>
+    <style>
+        .tbl {
+            border-collapse: collapse;
+        }
+
+        .tbl td {
+            border: 1px solid #666;
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="title"></div>
+        <div class="list"></div>
+    </div>
+
+    <script>
+        $('.title').load('./title.html')
+        $.ajax({
+            url: './db/user.xml',
+            success: function(data) {
+                // console.log(data);
+                items = $(data).find('record')
+
+                if(items.length > 0) {
+                    var tbl = $('<table />').addClass('tbl')
+
+                    $.each(items, function(i, item) {
+                        var id = $(item).find('id').text()
+                        var firstName = $(item).find('first_name').text()
+                        var lastName = $(item).find('last_name').text()
+                        var email = $(item).find('email').text()
+                        var gender = $(item).find('gender').text()
+
+                        var row = $('<tr />').append(
+                            $('<td />').text(id),
+                            $('<td />').text(firstName),
+                            $('<td />').text(lastName),
+                            $('<td />').text(email),
+                            $('<td />').text(gender),
+                        )
+                        tbl.append(row)                        
+                    })
+
+                    $('.list').append(tbl)
+                }
+            },
+            error : function() {
+                $('.list').text('"데이타를 불러오지 못했어요"')
+            }
+        })
+    </script>
+    
+</body>
+</html>
