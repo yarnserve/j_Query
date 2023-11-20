@@ -6,14 +6,19 @@
 
 .slide_01 .item {
     height: 600px;
-    background-color: orange;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
-.slide_01 .item.item_01 {}
+.slide_01 .item.item_01 {
+    background-image: url('../../images/slide_01.jpg');
+}
+
 .slide_01 .item.item_02 {
-    background-color: yellow;
+    background-image: url('../../images/slide_02.jpg');
 }
 .slide_01 .item.item_03 {
-    background-color: lightblue;
+    background-image: url('../../images/slide_03.jpg');
 }
 
 .slide_text {
@@ -23,33 +28,107 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .slide_text h4 {
     font-size: 60px;
     font-weight: bold;
+    animation: ani_scale 0.5s forwards;
+    opacity: 0;
 }
 
 .slide_text i {
     display: block;
     margin: 36px 0;
-    font-size: 36px;
+    font-size: 36px;    
+    animation: ani_rotate 0.5s 0.8s forwards;
+    opacity: 0;
 }
 
 .slide_text p {
+    position: relative;
     margin-bottom: 32px;
+    opacity: 0;
+    animation: ani_bottom_top 0.5s 0.8s forwards;
 }
 
 .slide_text a {
+    position: relative;
     display: inline-block;
     background-color: #3498db;
     color: #fff;
     font-size: 12px;
     padding: 10px 20px;
     border-radius: 6px;
+    opacity: 0;
+    animation: ani_top_bottom 0.5s 0.8s forwards;
 }
 
 .arrows {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
-    display: none;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.arrows img {
+    cursor: pointer;
+    opacity: 0.4;
+    transition: all 0.3s;
+}
+
+.arrows img:hover {
+    opacity: 1;
+}
+
+@keyframes ani_scale {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }  
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes ani_rotate {
+    0% {
+        opacity: 0;
+        transform: rotate(180deg);
+    }  
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes ani_bottom_top {
+    0% {
+        opacity: 0;
+        top: 20px;
+    }  
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+@keyframes ani_top_bottom {
+    0% {
+        opacity: 0;
+        top: -20px;
+    }  
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+/* slick-dots */
+.slick-dots {
+    bottom: 30px;
 }

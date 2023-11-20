@@ -17,3 +17,9 @@ body {
     color: #111;
     line-height: 1.6;
 }
+
+section {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 50px 16px;
+}

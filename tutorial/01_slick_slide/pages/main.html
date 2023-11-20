@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slick Slide</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/slide.css">
+    <link rel="stylesheet" href="../css/header.css">    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="../css/slide.css">
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -35,9 +35,9 @@
     
     <div class="slider_container">
         <div class="slide_01">
-            <div class="item item_01">1</div>
-            <div class="item item_02">2</div>
-            <div class="item item_03">3</div>
+            <div class="item item_01"></div>
+            <div class="item item_02"></div>
+            <div class="item item_03"></div>
         </div>
         <div class="slide_text">
             <h4>Lorem ipsum dolor</h4>
@@ -128,7 +128,10 @@
     <script>
         $(function() {
             $('.slide_01').slick({
-                dots:true
+                dots:true,
+                autoplay: true,
+                prevArrow: $('.prev'),
+                nextArrow: $('.next')
             })
         })
     </script>
