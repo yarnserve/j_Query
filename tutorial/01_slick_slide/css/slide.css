@@ -132,3 +132,51 @@
 .slick-dots {
     bottom: 30px;
 }
+
+.slick-dots li {
+    width: 30px;
+    height: 4px;
+    background-color: rgba(0,0,0,0.3);
+    transition: all 0.3s;
+}
+
+.slick-dots li.slick-active {
+    width: 80px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slick-dots li button::before {
+    content: '';
+}
+
+/* slide_02 */
+.slide_02 {}
+
+.control {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.control .slide_count {
+    height: 30px;
+    padding: 0 10px;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.control .btns {
+    display: flex;
+}
+
+.control .btns i {
+    width: 30px;
+    height: 30px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

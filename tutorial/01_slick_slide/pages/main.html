@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <link rel="stylesheet" href="../css/slide.css">
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
     <div class="container">
@@ -54,21 +55,21 @@
     </div>
 
     <section>
-        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+        <h2 class="headline">Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
         <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde quaerat voluptate molestiae voluptas deleniti dolore odio sint rem dicta, in eveniet laudantium debitis! Pariatur maxime ea ad repellendus voluptate quisquam autem ratione ullam, blanditiis ex quod, ipsa doloremque magni? Quaerat sit sed, expedita, magnam nemo distinctio, recusandae consectetur repellat ullam sapiente id cum exercitationem obcaecati aut tenetur voluptatibus corporis? Corrupti?
         </p>
-        <ul>
-            <li><img src="../../images/img_01.jpg" alt=""></li>
-            <li><img src="../../images/img_02.jpg" alt=""></li>
-            <li><img src="../../images/img_03.jpg" alt=""></li>
-            <li><img src="../../images/img_04.jpg" alt=""></li>
+        <ul class="cards">
+            <li class="card1"><img src="../../images/img_01.jpg" alt=""></li>
+            <li class="card2"><img src="../../images/img_02.jpg" alt=""></li>
+            <li class="card3"><img src="../../images/img_03.jpg" alt=""></li>
+            <li class="card4"><img src="../../images/img_04.jpg" alt=""></li>
         </ul>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita nesciunt reiciendis necessitatibus culpa, similique, nihil incidunt repellat laudantium voluptas fugiat a consequatur asperiores nobis labore quos! Sunt aliquam fugiat quo! Natus, dolor quis facere quaerat blanditiis soluta consectetur? Odio enim voluptatum vel nisi. Praesentium, dicta cum nihil velit ipsam saepe?
         </p>
 
-        <div class="slide_container">
+        <div class="slider_container">
             <div class="slide_02">
                 <img src="../../images/img_01_b.jpg" alt="">
                 <img src="../../images/img_02_b.jpg" alt="">
@@ -127,13 +128,51 @@
 
     <script>
         $(function() {
+            // 슬라이드 1
             $('.slide_01').slick({
                 dots:true,
                 autoplay: true,
                 prevArrow: $('.prev'),
                 nextArrow: $('.next')
             })
+
+            // 슬라이드 2
+            $('.slide_02').slick({
+                autoplay: true,
+                prevArrow: $('.xi-angle-left'),
+                nextArrow: $('.xi-angle-right')
+            })            
+
+            // 스크롤 리빌
+            ScrollReveal().reveal('.card1', {
+            distance: '50px',
+            origin: 'left',
+            easing : 'ease-in-out'
+            });
+
+            ScrollReveal().reveal('.card2', {
+                distance: '50px',
+                origin: 'right',
+                easing : 'ease-in-out'
+            });
+
+            ScrollReveal().reveal('.card3', {
+                distance: '50px',
+                origin: 'top',
+                easing : 'ease-in-out',
+                delay : 500
+            });
+
+            ScrollReveal().reveal('.card4', {
+                distance: '50px',
+                origin: 'bottom',
+                easing : 'ease-in-out',
+                delay : 500
+            });
+            
+            
         })
+        
     </script>
 
 
