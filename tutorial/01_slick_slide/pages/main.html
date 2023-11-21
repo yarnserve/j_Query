@@ -137,11 +137,24 @@
             })
 
             // 슬라이드 2
-            $('.slide_02').slick({
+            $('.slide_02').on('beforeChange', function(event, slick, currentSlide, nextSlide){                
+                $('.slide_count').text(`${nextSlide + 1} / ${slick.slideCount}`)
+            }).slick({
                 autoplay: true,
                 prevArrow: $('.xi-angle-left'),
-                nextArrow: $('.xi-angle-right')
-            })            
+                nextArrow: $('.xi-angle-right'),
+                autoplaySpeed: 1000
+            });
+
+            $('.xi-pause').on('click', function() {
+                if($(this).hasClass('xi-pause')) {
+                    $(this).removeClass('xi-pause').addClass('xi-play')
+                    $('.slide_02').slick('slickPause')
+                } else {
+                    $(this).removeClass('xi-play').addClass('xi-pause')
+                    $('.slide_02').slick('slickPlay')
+                }
+            })
 
             // 스크롤 리빌
             ScrollReveal().reveal('.card1', {
