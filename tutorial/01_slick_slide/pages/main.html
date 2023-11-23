@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -89,18 +90,20 @@
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis aliquam tempora! Nihil quo placeat amet. Laudantium ut officia et inventore, maiores ea cupiditate reiciendis, earum voluptatum non, laborum consequuntur enim recusandae nam aspernatur quos quia assumenda. Atque cumque ipsa porro provident eum unde totam, illum nemo dicta mollitia non debitis ipsum cum labore. Cumque mollitia placeat expedita error voluptates nostrum ad officiis fuga! Consectetur provident reprehenderit exercitationem numquam veritatis quidem dolor placeat? At recusandae nam debitis! Corrupti, aspernatur ipsum?
         </p>
+    </section> 
 
-        <div class="banner">
-            <p>안녕 jQuery</p>
-        </div>
+    <div class="banner">
+        <p>안녕 jQuery</p>
+    </div>
 
-        <section>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam esse non consequuntur quidem ipsa, reiciendis repudiandae ipsum iusto adipisci mollitia distinctio molestiae similique, iure minus illum odio enim id tempora nobis et facilis optio. Fugit iusto est perspiciatis. Minus quisquam molestiae ipsum porro vero? Id, recusandae? Placeat sunt totam quo reiciendis esse eaque iure? Quae, autem nobis vero molestiae recusandae reprehenderit libero aspernatur tenetur illum suscipit eaque, consequatur ipsum est ratione laudantium debitis officia repellendus temporibus odio, deserunt eum provident!
-            </p>
-        </section>
+    <section>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam esse non consequuntur quidem ipsa, reiciendis repudiandae ipsum iusto adipisci mollitia distinctio molestiae similique, iure minus illum odio enim id tempora nobis et facilis optio. Fugit iusto est perspiciatis. Minus quisquam molestiae ipsum porro vero? Id, recusandae? Placeat sunt totam quo reiciendis esse eaque iure? Quae, autem nobis vero molestiae recusandae reprehenderit libero aspernatur tenetur illum suscipit eaque, consequatur ipsum est ratione laudantium debitis officia repellendus temporibus odio, deserunt eum provident!
+        </p>
+    </section>
 
-        <div class="slide_container">
+    <section>
+        <div class="slider_container slide3">
             <ul class="slide_03">
                 <li><img src="../../images/img_01.jpg" alt=""></li>
                 <li><img src="../../images/img_02.jpg" alt=""></li>
@@ -111,12 +114,15 @@
                 <li><img src="../../images/img_03.jpg" alt=""></li>
                 <li><img src="../../images/img_04.jpg" alt=""></li>
             </ul>
-            <div class="arrow">
+            <div class="slide03_arrows">
                 <i class="xi-long-arrow-left"></i>
                 <i class="xi-long-arrow-right"></i>
             </div>
         </div>
+    </section>
 
+
+    <section>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit deserunt repellat magni corporis consequatur, praesentium labore temporibus omnis reiciendis eum qui ipsam suscipit accusamus, perspiciatis vel veniam ex, et at officiis explicabo! Molestiae fuga expedita, voluptatum facere pariatur vero omnis sapiente voluptatem quos, error velit reiciendis? Perspiciatis molestiae quasi dignissimos.
         </p>
@@ -128,6 +134,11 @@
 
     <script>
         $(function() {
+            // 페러렉스
+            $('.banner').parallax({
+                imageSrc: '../../images/slide_03.jpg',
+            });
+
             // 슬라이드 1
             $('.slide_01').slick({
                 dots:true,
@@ -182,7 +193,15 @@
                 easing : 'ease-in-out',
                 delay : 500
             });
-            
+
+            // 슬라이드 03
+            $('.slide_03').slick({
+                prevArrow: $('.xi-long-arrow-left'),
+                nextArrow: $('.xi-long-arrow-right'),
+                infinite: false,
+                slidesToShow: 4,
+                slidesToScroll: 4
+            })           
             
         })
         

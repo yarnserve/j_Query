@@ -180,3 +180,27 @@
     justify-content: center;
     cursor: pointer;
 }
+
+/* 슬라이드 03 */
+.slide_03 {
+    display: flex;
+}
+
+.slide_03 li img {
+    width: 250px;
+    display: block;
+}
+
+.slide03_arrows {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 30px;
+}
+
+.slide03_arrows i {
+    cursor: pointer;
+}
