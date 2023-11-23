@@ -4,10 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slick Slide</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="../css/slide.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>    
 </head>
 <body>
     <div class="container">
-        <h1>Intro page</h1>
-    </div>    
+        <div class="header_container"></div>    
+    </div> 
+
+    <section>
+        <h1>intro page</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quos dicta ex maiores nostrum accusantium voluptatem, deleniti quas ratione temporibus quisquam reiciendis tempora perspiciatis ea. Quod adipisci velit sequi optio!
+        </p>
+    </section>
+
+    <script>
+        $(function() {
+            // 헤더 include
+            $('.header_container').load('../inc/header.html')
+        })
+    </script>
 </body>
 </html>

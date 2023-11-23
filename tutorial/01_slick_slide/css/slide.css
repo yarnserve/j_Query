@@ -182,13 +182,9 @@
 }
 
 /* 슬라이드 03 */
-.slide_03 {
-    display: flex;
-}
 
-.slide_03 li img {
+.slide_03 img {
     width: 250px;
-    display: block;
 }
 
 .slide03_arrows {
@@ -203,4 +199,12 @@
 
 .slide03_arrows i {
     cursor: pointer;
+}
+
+.slide03_arrows i.xi-long-arrow-left {
+    opacity: 0.3;
+}
+
+.slide_03 .slick-list {
+    overflow: initial;
 }

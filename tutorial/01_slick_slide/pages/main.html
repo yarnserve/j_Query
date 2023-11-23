@@ -18,21 +18,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="header_container">
-            <header>
-                <div class="logo"><a href="#">가나다</a></div>
-                <ul class="gnb">
-                    <li class="active"><a href="#">홈</a></li>
-                    <li><a href="#">소개</a></li>
-                    <li><a href="#">서비스</a></li>
-                    <li><a href="#">가치</a></li>
-                    <li><a href="#">홍보</a></li>
-                    <li><a href="#">투자</a></li>
-                    <li><a href="#">채용</a></li>
-                </ul>
-                <button>login</button>
-            </header>
-        </div>    
+        <div class="header_container"></div>    
     </div> 
     
     <div class="slider_container">
@@ -134,6 +120,10 @@
 
     <script>
         $(function() {
+            // 헤더 include
+            $('.header_container').load('../inc/header.html')
+
+
             // 페러렉스
             $('.banner').parallax({
                 imageSrc: '../../images/slide_03.jpg',
@@ -201,8 +191,17 @@
                 infinite: false,
                 slidesToShow: 4,
                 slidesToScroll: 4
-            })           
-            
+            })
+
+            $('.slide_03').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                if(currentSlide == 4) {
+                    $('.xi-long-arrow-left').css('opacity', 0.3)
+                    $('.xi-long-arrow-right').css('opacity', 1)
+                } else {
+                    $('.xi-long-arrow-left').css('opacity', 1)
+                    $('.xi-long-arrow-right').css('opacity', 0.3)
+                }
+            });
         })
         
     </script>
