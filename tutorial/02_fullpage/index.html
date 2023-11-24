@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery - fullpage</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="header">
+        <span class="bars"><i class="xi-bars"></i></span>
+    </div>
+    
+    <ul class="nav">
+        <li><a href="#">html</a></li>
+        <li><a href="#">css</a></li>
+        <li><a href="#">javascript</a></li>
+        <li><a href="#">jquery</a></li>
+    </ul>
+
+    <div class="fullpage">
+        <div class="section">
+            <div class="item">
+                <h4>Hello html</h4>
+                <ul class="photos">
+                    <li><img src="../images/img_01.jpg" alt=""></li>
+                    <li><img src="../images/img_02.jpg" alt=""></li>
+                    <li><img src="../images/img_03.jpg" alt=""></li>
+                    <li><img src="../images/img_04.jpg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <div class="item">
+                <h4>Hello css</h4>
+            </div>
+        </div>
+        <div class="section">
+            <div class="item">
+                <h4>Hello javascript</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nobis pariatur reprehenderit? Accusamus placeat cumque dolor asperiores est sapiente aliquam dolore voluptate quaerat modi voluptatum laudantium, aperiam ipsam tenetur, impedit iusto molestiae hic in non mollitia? Reprehenderit iure ea accusantium suscipit, molestias harum asperiores! Ab reprehenderit inventore nisi reiciendis quisquam.
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="item">
+                <h4>Hello jquery</h4>
+                <ul class="photos">
+                    <li><img src="../images/img_01.jpg" alt=""></li>
+                    <li><img src="../images/img_02.jpg" alt=""></li>
+                </ul>
+            </div>
+        </div>        
+    </div>
+
+    <script>
+        $(function() {
+            $('.bars').on('click', function() {
+                $('.nav').toggleClass('active')
+
+                if($(this).find('i').hasClass('xi-bars')) {
+                    $(this).find('i').attr('class', 'xi-angle-left')
+                } else {
+                    $(this).find('i').attr('class', 'xi-bars')
+                }
+            })
+            
+        })
+    </script>
+</body>
+</html>
