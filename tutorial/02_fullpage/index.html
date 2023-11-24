@@ -16,10 +16,10 @@
     </div>
     
     <ul class="nav">
-        <li><a href="#">html</a></li>
-        <li><a href="#">css</a></li>
-        <li><a href="#">javascript</a></li>
-        <li><a href="#">jquery</a></li>
+        <li><a data-menuanchor="page1" href="#page1" class="active">html</a></li>
+        <li><a data-menuanchor="page2" href="#page2">css</a></li>
+        <li><a data-menuanchor="page3" href="#page3">javascript</a></li>
+        <li><a data-menuanchor="page4" href="#page4">jquery</a></li>
     </ul>
 
     <div class="fullpage">
@@ -69,8 +69,27 @@
                     $(this).find('i').attr('class', 'xi-bars')
                 }
             })
+
+            // fullpage
+            $('.fullpage').fullpage({
+                autoScrolling: true,
+                navigation: true,
+                menu: '.nav',
+	            anchors:['page1', 'page2', 'page3', 'page4'],
+                onLeave: function(index, nextIndex, direction){
+                    var leavingSection = $(this);
+                    //after leaving section 2
+                    if(index == 2 && direction =='down'){
+                        alert("Going to section 3!");
+                    } else if (index == 2 && direction == 'up'){
+                        alert("Going to section 1!");
+                    }
+                }      
+            })
             
         })
+
+
     </script>
 </body>
 </html>
