@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jquery - swiper</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>    
     <link rel="stylesheet" href="./style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -12,7 +13,7 @@
 <body>
     <h1>Swiper</h1>
 
-    <div class="swiper">
+    <div class="swiper swiper_01">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <div class="swiper-slide">Slide 1</div>
@@ -26,11 +27,76 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </div> 
+
+    <div class="container">
+        <div class="swiper swiper_02">
+            <div class="title_area">
+                <h2>신상품</h2>
+            </div>
+            <div class="swiper-wrapper">
+              <!-- <div class="swiper-slide">
+                <div class="photo">1</div>
+                <div class="titles">
+                    <h4>나이키 덩크 로우 레트로</h4>
+                    <p>남성 신발</p>
+                </div>
+              </div>  -->
+            </div>
+
+            <div class="swiper-pagination"></div>          
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div> 
+    </div>
+
+    <script>
+        const items = [
+            { id: 1, title: '나이키 덩크 로우 레트로', category: '남성 신발' },
+            { id: 2, title: '나이키 덩크 로우 레트로2', category: '남성 신발' },
+            { id: 3, title: '나이키 덩크 로우 레트로', category: '여성 신발' },
+            { id: 4, title: '나이키 덩크 로우 A레트로', category: '아동 신발' },
+            { id: 5, title: '나이키 덩크 로우 B레트로', category: '남성 신발' },
+            { id: 6, title: '나이키 덩크 로우 레트로', category: '남성 신발' },
+            { id: 7, title: '나이키 덩크 로우 C레트로', category: '남성 신발' },
+            { id: 8, title: '나이키 덩크 로우 레트로', category: '남성 신발' },
+            { id: 9, title: '나이키 로우 R레트로', category: '남성 신발' },
+            { id: 10, title: '나이키 덩크 ACB 레트로', category: '남성 신발' },
+            { id: 11, title: '나이키 덩크 로우 레트로', category: '남성 신발' },
+            { id: 12, title: '나이키 덩크 로우 레트로', category: '남성 신발' },
+        ]
+
+        items.forEach(item => {
+            console.log(item)
+            var row = `<div class="swiper-slide">
+                <div class="photo">${item.id}</div>
+                <div class="titles">
+                    <h4>${item.title}</h4>
+                    <p>${item.category}</p>
+                </div>
+              </div>`
+            
+            $('.swiper_02 .swiper-wrapper').append(row)  
+        })
+    </script>
     
     <script>
-        const swiper = new Swiper('.swiper', {
+        const swiper1 = new Swiper('.swiper_01', {
             pagination: {
                 el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+
+        const swiper2 = new Swiper('.swiper_02', {
+            slidesPerView: 4,
+            spaceBetween: 20,
+
+            pagination: {
+                el: '.swiper-pagination',
+                type: "progressbar",
             },
             navigation: {
                 nextEl: '.swiper-button-next',
