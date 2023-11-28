@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px 0;
+    font-weight: normal;
+}
+
+.cards {
+    display: flex;
+    gap: 30px;
+}
+
+.cards li {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cards img {
+    display: block;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.cards li.active img {
+    transform: scale(1.1);
+}
+
+.cards p {
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    line-height: 50px;
+    padding: 0 16px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+}
+
+.cards li:nth-child(1) p {
+    bottom: -60px;
+}
+
+.cards li:nth-child(3) p {
+    left: -100%;
+}

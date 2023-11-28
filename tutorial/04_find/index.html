@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery - find</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>find</h1>
+
+        <ul class="cards">
+            <li>
+                <img src="../images/img_01.jpg" alt="">
+                <p>This is title-01</p>
+            </li>
+            <li>
+                <img src="../images/img_02.jpg" alt="">
+                <p>This is title-02</p>
+            </li>
+            <li>
+                <img src="../images/img_03.jpg" alt="">
+                <p>This is title-03</p>
+            </li>
+        </ul>
+    </div> 
+    
+    <script>
+        var items = $('.cards li')
+        var time = 300        
+
+        items
+            .eq(0)
+            .mouseenter(function(){
+                $(this).find('p').stop().animate({opacity: 1, bottom: 0}, time)
+                $(this).addClass('active')
+            })
+            .mouseleave(function(){
+                $(this).find('p').stop().animate({opacity: 0, bottom: -60}, time)
+                $(this).removeClass('active')
+            }) 
+
+        items
+            .eq(1)
+            .mouseenter(function(){
+                $(this).find('p').stop().animate({opacity: 1}, time)
+                $(this).addClass('active')
+            })
+            .mouseleave(function(){
+                $(this).find('p').stop().animate({opacity: 0}, time)
+                $(this).removeClass('active')
+            }) 
+
+        items
+            .eq(2)
+            .mouseenter(function(){
+                $(this).find('p').stop().animate({opacity: 1, left: 0}, time)
+                $(this).addClass('active')
+            })
+            .mouseleave(function(){
+                $(this).find('p').stop().animate({opacity: 0, left: '-100%'}, time)
+                $(this).removeClass('active')
+            }) 
+    </script>
+</body>
+</html>

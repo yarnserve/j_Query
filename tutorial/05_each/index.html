@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery - each</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>each</h1>  
+        
+        <div class="card">
+            <div class="photo">
+                <img src="../images/img_02.jpg" alt="">
+                <div class="sns">
+                    <i class="xi-share"></i>
+                    <i class="xi-instagram"></i>
+                    <i class="xi-kakaostory"></i>
+                    <i class="xi-youtube-play"></i>
+                </div>
+            </div>
+            <div class="info">
+                <h2>This is title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis odit sequi, debitis, totam aut nam recusandae ex sunt asperiores assumenda minima, temporibus ipsum quam amet corporis quia quisquam magnam veniam!</p>
+            </div>
+        </div>
+    </div> 
+
+    <script>
+        var sns = $('.sns')
+        var items = $('.sns i')
+
+        sns.hover(
+            function() {
+                items.each(function(index) {
+                    console.log(index)
+                    $(this).stop().animate({left: index * 50})
+                })
+            },
+            function() {}
+        )
+    </script>
+
+</body>
+</html>
