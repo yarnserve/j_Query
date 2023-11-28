@@ -32,15 +32,19 @@
     <script>
         var sns = $('.sns')
         var items = $('.sns i')
+        var time = 300
 
         sns.hover(
             function() {
                 items.each(function(index) {
-                    console.log(index)
-                    $(this).stop().animate({left: index * 50})
+                    $(this).stop().animate({left: index * 50}, time)
                 })
             },
-            function() {}
+            function() {
+                items.each(function(index) {
+                    $(this).stop().animate({left: 0}, time)
+                })
+            }
         )
     </script>
 

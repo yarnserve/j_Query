@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery - drawer menu</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>drawer menu</h1>  
+
+        <div class="side">
+            <div class="banner">banner</div>
+            <ul>
+                <li>html</li>
+                <li>css</li>
+                <li>javascript</li>
+                <li>jquery</li>
+                <li>java</li>
+            </ul>
+            <div class="banner">banner</div>
+            <div class="banner">banner</div>
+            <div class="banner">banner</div>
+
+            <div class="btn">
+                <img src="../images/open.png" alt="">
+            </div>
+        </div>       
+    </div>  
+    
+    <script>
+        $('.btn').click(function(){
+            $('.side').toggleClass('active')
+            
+            if($('.side').hasClass('active')) {
+                $(this).find('img').attr('src', '../images/close.png')
+            } else {
+                $(this).find('img').attr('src', '../images/open.png')
+            }
+        })
+    </script>
+
+   
+
+</body>
+</html>

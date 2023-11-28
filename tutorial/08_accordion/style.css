@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px 0;
+    font-weight: normal;
+}
+
+.accordion {
+    width: 600px;
+    margin: 0 auto;
+}
+
+h3 {
+    background-color: #ddd;
+    padding: 12px;
+    cursor: pointer;
+    position: relative;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(-45deg);
+}
