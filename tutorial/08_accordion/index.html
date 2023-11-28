@@ -31,9 +31,24 @@
             <p class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ex voluptas aliquam aut ducimus iusto officiis possimus, optio rem, culpa deleniti ratione sed voluptatibus dolor tenetur, minima repellendus aperiam nihil. Officiis porro iusto ex ab
             </p>
-        </div>
-       
+        </div>       
     </div>
+
+    <script>
+        $('.text_box:first').find('h3').addClass('active')
+        $('.text_box:first').find('p').slideDown()
+
+        $('.text_box h3').on('click', function() {
+            if($(this).hasClass('active')) {
+                $('.text_box').find('p').slideUp()
+                $(this).removeClass('active').next().slideUp()
+            } else {
+                $('.text_box h3').removeClass('active')
+                $('.text_box').find('p').slideUp()
+                $(this).addClass('active').next().slideDown()
+            }
+        })
+    </script>
 
 </body>
 </html>
