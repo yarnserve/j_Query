@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery - sticky</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>가나다</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quos non sequi ratione esse tenetur rerum beatae similique quas, accusantium voluptas magni nostrum harum quisquam? Ad nisi corrupti modi aliquid.
+            </p>
+            <div class="nav">
+                <ul class="gnb">
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">서비스</a></li>
+                    <li><a href="#">가치</a></li>
+                    <li><a href="#">홍보</a></li>
+                    <li><a href="#">투자</a></li>
+                    <li><a href="#">채용</a></li>
+                </ul>
+            </div>
+        </div> 
+
+        <div class="main">
+            <div class="slide"></div>
+
+            <div class="section">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto optio earum maiores quo explicabo eius perferendis cumque excepturi modi quaerat qui sapiente, corrupti et quasi. Aperiam dicta obcaecati cum a iusto similique, facere ipsam sequi voluptatum quisquam eum laboriosam illo voluptate accusamus qui? Explicabo veniam quo soluta autem ab sapiente, unde quisquam repellendus eius amet animi iusto ex quis numquam adipisci deleniti error praesentium officia nemo laudantium! Veritatis quasi minus debitis velit, voluptatem ex optio inventore aliquid magnam suscipit ea quas facere quaerat facilis odit temporibus voluptas expedita possimus, necessitatibus vero iure eligendi? Sequi facere veniam nemo aperiam neque ea illo iusto cupiditate, quia quae voluptas eligendi facilis, iste fugiat sit id expedita! Nobis ut voluptas tempora repudiandae quod accusamus porro blanditiis aliquam laborum pariatur adipisci libero quae, sed sint doloremque dolor nemo doloribus harum obcaecati? Debitis dignissimos dolorum qui ullam ipsa ut tempora dolore ea vitae eius. Qui, neque in enim nemo ad molestias adipisci aliquid nihil repellat eum unde. Reiciendis commodi iure animi. Quibusdam recusandae ab est cupiditate maiores dolorum provident eius necessitatibus distinctio veritatis voluptate officiis exercitationem autem neque quasi iusto, ullam obcaecati. Facilis eos enim, ex iste sapiente alias assumenda saepe laborum, tenetur unde fugiat quidem.
+                </p>
+            </div>
+            <div class="section">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto optio earum maiores quo explicabo eius perferendis cumque excepturi modi quaerat qui sapiente, corrupti et quasi. Aperiam dicta obcaecati cum a iusto similique, facere ipsam sequi voluptatum quisquam eum laboriosam illo voluptate accusamus qui? Explicabo veniam quo soluta autem ab sapiente, unde quisquam repellendus eius amet animi iusto ex quis numquam adipisci deleniti error praesentium officia nemo laudantium! Veritatis quasi minus debitis velit, voluptatem ex optio inventore aliquid magnam suscipit ea quas facere quaerat facilis odit temporibus voluptas expedita possimus, necessitatibus vero iure eligendi? Sequi facere veniam nemo aperiam neque ea illo iusto cupiditate, quia quae voluptas eligendi facilis, iste fugiat sit id expedita! Nobis ut voluptas tempora repudiandae quod accusamus porro blanditiis aliquam laborum pariatur adipisci libero quae, sed sint doloremque dolor nemo doloribus harum obcaecati? Debitis dignissimos dolorum qui ullam ipsa ut tempora dolore ea vitae eius. Qui, neque in enim nemo ad molestias adipisci aliquid nihil repellat eum unde. Reiciendis commodi iure animi. Quibusdam recusandae ab est cupiditate maiores dolorum provident eius necessitatibus distinctio veritatis voluptate officiis exercitationem autem neque quasi iusto, ullam obcaecati. Facilis eos enim, ex iste sapiente alias assumenda saepe laborum, tenetur unde fugiat quidem.
+                </p>
+            </div>
+            <div class="section">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto optio earum maiores quo explicabo eius perferendis cumque excepturi modi quaerat qui sapiente, corrupti et quasi. Aperiam dicta obcaecati cum a iusto similique, facere ipsam sequi voluptatum quisquam eum laboriosam illo voluptate accusamus qui? Explicabo veniam quo soluta autem ab sapiente, unde quisquam repellendus eius amet animi iusto ex quis numquam adipisci deleniti error praesentium officia nemo laudantium! Veritatis quasi minus debitis velit, voluptatem ex optio inventore aliquid magnam suscipit ea quas facere quaerat facilis odit temporibus voluptas expedita possimus, necessitatibus vero iure eligendi? Sequi facere veniam nemo aperiam neque ea illo iusto cupiditate, quia quae voluptas eligendi facilis, iste fugiat sit id expedita! Nobis ut voluptas tempora repudiandae quod accusamus porro blanditiis aliquam laborum pariatur adipisci libero quae, sed sint doloremque dolor nemo doloribus harum obcaecati? Debitis dignissimos dolorum qui ullam ipsa ut tempora dolore ea vitae eius. Qui, neque in enim nemo ad molestias adipisci aliquid nihil repellat eum unde. Reiciendis commodi iure animi. Quibusdam recusandae ab est cupiditate maiores dolorum provident eius necessitatibus distinctio veritatis voluptate officiis exercitationem autem neque quasi iusto, ullam obcaecati. Facilis eos enim, ex iste sapiente alias assumenda saepe laborum, tenetur unde fugiat quidem.
+                </p>
+            </div>
+        </div>
+    </div>
+    <a href="#x" class="go_top">top</a>
+
+    <script>
+        var navOffsetValue = $('.nav').offset().top 
+
+        $(window).scroll(function() {
+            var scrollValue = $(document).scrollTop()
+
+            if(scrollValue > navOffsetValue) {
+                $('.nav').addClass('fixed')
+            } else {
+                $('.nav').removeClass('fixed')
+            }
+
+            if(scrollValue > 800) {
+                $('.go_top').fadeIn()
+            } else {
+                $('.go_top').fadeOut()
+            }
+        })
+
+        $('.go_top').on('click', function() {
+            $('html, body').animate({scrollTop: 0})
+        })
+    </script>
+
+</body>
+</html>
