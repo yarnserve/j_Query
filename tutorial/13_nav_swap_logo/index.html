@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery - swap logo</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <div class="logo"><img src="../images/logo.svg" alt=""></div>
+                <ul class="gnb">
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">서비스</a></li>
+                    <li><a href="#">가치</a></li>
+                    <li><a href="#">홍보</a></li>
+                    <li><a href="#">투자</a></li>
+                    <li><a href="#">채용</a></li>
+                </ul>
+                <button>로그인</button>
+            </nav>
+        </header>
+
+        <section>
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatem unde tenetur at, ab quo deleniti alias consequatur eos vero illum ratione fuga, officia similique excepturi rem expedita? Rem officiis eius saepe veniam quo consequatur voluptatum recusandae alias in at vitae sit sequi doloribus neque assumenda obcaecati nesciunt quaerat dolor, maxime, illum dignissimos quae? Mollitia provident voluptas eum, facere necessitatibus explicabo quod, eaque reiciendis deserunt fuga quaerat nostrum porro, distinctio sed incidunt dolores. Mollitia enim dolorem rerum, perspiciatis quisquam itaque magni possimus reprehenderit architecto maxime optio necessitatibus tenetur sit in, facere ab suscipit totam doloribus veritatis excepturi fugiat quos delectus!
+            </p>
+        </section>
+        <section>
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatem unde tenetur at, ab quo deleniti alias consequatur eos vero illum ratione fuga, officia similique excepturi rem expedita? Rem officiis eius saepe veniam quo consequatur voluptatum recusandae alias in at vitae sit sequi doloribus neque assumenda obcaecati nesciunt quaerat dolor, maxime, illum dignissimos quae? Mollitia provident voluptas eum, facere necessitatibus explicabo quod, eaque reiciendis deserunt fuga quaerat nostrum porro, distinctio sed incidunt dolores. Mollitia enim dolorem rerum, perspiciatis quisquam itaque magni possimus reprehenderit architecto maxime optio necessitatibus tenetur sit in, facere ab suscipit totam doloribus veritatis excepturi fugiat quos delectus!
+            </p>
+        </section>
+        <section>
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatem unde tenetur at, ab quo deleniti alias consequatur eos vero illum ratione fuga, officia similique excepturi rem expedita? Rem officiis eius saepe veniam quo consequatur voluptatum recusandae alias in at vitae sit sequi doloribus neque assumenda obcaecati nesciunt quaerat dolor, maxime, illum dignissimos quae? Mollitia provident voluptas eum, facere necessitatibus explicabo quod, eaque reiciendis deserunt fuga quaerat nostrum porro, distinctio sed incidunt dolores. Mollitia enim dolorem rerum, perspiciatis quisquam itaque magni possimus reprehenderit architecto maxime optio necessitatibus tenetur sit in, facere ab suscipit totam doloribus veritatis excepturi fugiat quos delectus!
+            </p>
+        </section>
+        <section>
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatem unde tenetur at, ab quo deleniti alias consequatur eos vero illum ratione fuga, officia similique excepturi rem expedita? Rem officiis eius saepe veniam quo consequatur voluptatum recusandae alias in at vitae sit sequi doloribus neque assumenda obcaecati nesciunt quaerat dolor, maxime, illum dignissimos quae? Mollitia provident voluptas eum, facere necessitatibus explicabo quod, eaque reiciendis deserunt fuga quaerat nostrum porro, distinctio sed incidunt dolores. Mollitia enim dolorem rerum, perspiciatis quisquam itaque magni possimus reprehenderit architecto maxime optio necessitatibus tenetur sit in, facere ab suscipit totam doloribus veritatis excepturi fugiat quos delectus!
+            </p>
+        </section>
+    </div>
+
+    <script>
+        $(window).scroll(function() {
+            var scrollValue = $(window).scrollTop()
+
+            function logoSwap(url) {
+                $('.logo').find('img').attr('src', url)
+            }
+
+            if(scrollValue > 500) {
+                $('.nav').addClass('small')
+                logoSwap('../images/logo_s.svg')
+            } else {
+                $('.nav').removeClass('small')
+                logoSwap('../images/logo.svg')
+            }
+        })
+    </script>
+</body>
+</html>
