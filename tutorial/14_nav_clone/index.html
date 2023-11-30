@@ -56,7 +56,17 @@
         
         header2.append(headerClone)
         header2.prependTo('section')
-        
+
+        var headerHeight = $('.header').outerHeight() + 100
+
+        $(window).scroll(function(){
+            if($(this).scrollTop() > headerHeight) {
+                header2.addClass('show')
+                header2.find('img').attr('src', '../images/logo_s.svg')
+            } else {
+                header2.removeClass('show')
+            }
+        })      
 
     </script>
 </body>
